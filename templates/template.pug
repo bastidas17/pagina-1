@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Practica
+    meta(name='viewport', content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="css/styles.css")
+    link(href="https://file.myfontastic.com/pZ7hcrXQqrSNVX6vfYd3jc/icons.css" rel="stylesheet")
+  body
+    header.ed-container
+      .ed-item.s-80.m-35
+        include block-logo
+      .ed-item.s-20.m-60.cross-center.main-end.menu
+        .nav-toggle#main-nav-toggle
+        .nav-container#nav-container
+          .ed-container
+            .ed-item
+              nav.main-nav#main-nav
+                include block-menu
+    block banner
+    block aboutUs
+    //block features
+    //block services
+    //block gallery
+    //block pricing
+    //block testimonials
+    //.posts
+    block footer
+
+    script(src='js/ed-grid.js')
+    script(src='js/scripts.js')

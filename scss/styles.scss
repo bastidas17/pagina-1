@@ -1,0 +1,149 @@
+$cssCore: false;
+$devMode: false;
+$color1: #310F7F;
+$color2: #1D81F1;
+$colorText: #555;
+@import "ed-grid/ed-grid";
+
+body {
+
+  font-size : .9em;
+  line-height : 1.5;
+  color: $colorText;
+  background-color: #709CE6;
+}
+
+header {
+	background-color: $color1;
+	height: 100px;
+  @include from(m){
+
+  }
+
+}
+
+.logo {
+	color: #fff;
+  line-height: 1.2em;
+	&__title{
+		margin-bottom: 0;
+		font-size: 1.5em;
+	}
+	&__subtitle{
+		color: #F2EFEF;
+		margin: 0;
+		font-size: .7em;
+
+	}
+
+}
+//menu
+
+.main-menu {
+  
+  @include edMenu(l);
+
+  a {
+    color: #fff;
+    text-transform : uppercase;
+    margin-right : 2px;
+    
+    &.active,
+    &:hover {
+      background : rgba(#000,.2);
+    }
+  }
+}
+
+.main-nav {
+  @include edNav('right', l);
+  
+  @include to(l) {
+    background : rgba($color2,.9);
+  }
+}
+
+.nav-toggle {
+  @include navToggle(20px,$color2);
+  @include hideFrom(l);
+}
+
+.nav-container {
+  @include from(l) {
+
+    background : $color2;
+    &.sticky {
+      position : fixed;
+      top :0;
+      width : 100%;
+      z-index : 100;
+      background : rgba($color2,.8);
+      
+
+    }
+  }
+}
+
+//banner
+
+.main-banner {
+  img{
+    width: 100%;
+  }
+  
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+  border: #DADADA solid 2px;
+
+  @include from(m){
+    max-width: 80%;
+    margin: 0 auto;
+
+
+  }
+}
+
+//about-us
+//
+.about-us{
+  
+  @include from(m){
+    max-width: 80%;
+    margin: 0 auto;
+    
+  }
+
+  &__titlen{
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  &__img{
+    display: block;
+    border: 2px solid #000;
+    margin: 0 auto;
+  }
+
+  &__conten{
+    padding-top: .5em;
+    text-align: justify;
+    padding-bottom: .5em;
+  }
+
+  &__cta{
+    @include button(white,$color2);
+    border : 1px solid $color1;
+
+  }
+}
+
+//footer 
+
+.footer{
+  background-color: $color1;
+  color: #fff;
+  &__copy{
+    text-align: center;
+    padding: 1em 0;
+  }
+}
